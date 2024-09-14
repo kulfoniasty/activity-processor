@@ -13,6 +13,7 @@
 
     <groupId>tk.musial.activityprocessor</groupId>
     <artifactId>activity-api</artifactId>
+    <packaging>jar</packaging>
 
 
 </project>

@@ -17,8 +17,12 @@
     <dependencies>
         <dependency>
             <groupId>tk.musial.activityprocessor</groupId>
-            <artifactId>acivity-api</artifactId>
+            <artifactId>activity-api</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
         </dependency>
     </dependencies>
 

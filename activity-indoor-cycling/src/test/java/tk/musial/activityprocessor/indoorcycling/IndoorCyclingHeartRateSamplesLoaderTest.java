@@ -1,22 +1,25 @@
 package tk.musial.activityprocessor.indoorcycling;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+import java.io.InputStream;
+
+import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import java.io.InputStream;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 class IndoorCyclingHeartRateSamplesLoaderTest {
 
   @Test
   void failsToLoadInvalidJson() {
-    Assertions.assertThatExceptionOfType(JsonParseException.class)
+              var jsonResource =
+                  this.getClass().getResourceAsStream("samples.invalid.json");
+    assertThatExceptionOfType(RuntimeException.class)
         .isThrownBy(
             () -> {
-              InputStream jsonResource =
-                  this.getClass().getResourceAsStream("samples.invalid.json");
-              new IndoorCyclingHeartRateSamplesLoader(jsonResource).load();
-            });
+                var loader = new IndoorCyclingHeartRateSamplesLoader(jsonResource);
+                loader.load();
+            })
+      .withCauseInstanceOf(JsonParseException.class);
   }
 }

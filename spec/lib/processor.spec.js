@@ -184,7 +184,6 @@ describe("GIVEN processor", () => {
           .filter(isHeartRateSample)
           .reduce((accumulator, value, index) => {
             const lapNumber = Math.floor(index / 2);
-
             accumulator[lapNumber] = accumulator[lapNumber] || [];
             accumulator[lapNumber].push(value);
             return accumulator;

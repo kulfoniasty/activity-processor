@@ -115,6 +115,21 @@ describe("GIVEN processor", () => {
       }
     });
 
+    it("WHEN invoked without initializing laps THEN error is thrown", (done) => {
+      try {
+        processor
+          .loadSamples([...samples])
+          .loadSummary({ ...summary })
+          .process();
+        done.fail("validation error expected");
+      } catch (e) {
+        expect(e).toEqual(
+          new Error("provide all three: samples, laps and summary"),
+        );
+        done();
+      }
+    });
+
     it("WHEN invoked with all inputs set THEN no error is thrown", () => {
       processor
         .loadSamples([...samples])

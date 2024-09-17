@@ -190,9 +190,11 @@ describe("GIVEN processor", () => {
           }, {});
 
         expect(processingResult.lapsData).toEqual(
-          laps.map((lap) =>
+          laps.map((lap, index) =>
             jasmine.objectContaining({
-              heartRateSamples,
+              heartRateSamples: heartRateSamples[index]
+                .flatMap(({data}) => data.split(','))
+                .map((heartRate, sampleIndex) => ({sampleIndex, heartRate})),
             }),
           ),
         );

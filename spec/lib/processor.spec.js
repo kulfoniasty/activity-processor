@@ -159,6 +159,7 @@ describe("GIVEN processor", () => {
         expect(processingResult.activityOverview).toEqual(
           jasmine.objectContaining({
             userId: summary.userId,
+            type: summary.activityType,
           }),
         );
       });

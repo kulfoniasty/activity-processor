@@ -1,6 +1,6 @@
-import activityProcessor from "../../lib/processor.js";
-import { summary } from "./summary.fixtures.js";
-import { samples } from "./sample.fixtures.js";
+const activityProcessor = require("../../lib/processor.js");
+const { summary } = require("./summary.fixtures.js");
+const { samples } = require("./sample.fixtures.js");
 
 describe("GIVEN processor", () => {
   let processor;

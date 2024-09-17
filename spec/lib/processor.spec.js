@@ -160,6 +160,7 @@ describe("GIVEN processor", () => {
           jasmine.objectContaining({
             userId: summary.userId,
             type: summary.activityType,
+            device: summary.deviceName,
           }),
         );
       });

@@ -71,4 +71,16 @@ describe("GIVEN processor", () => {
       processor.loadSamples([...samples]);
     });
   });
+
+  describe("AND loadLaps method", () => {
+    it("WHEN invoked with empty array THEN error is thrown", (done) => {
+      try {
+        processor.loadLaps([]);
+        done.fail("validation error expected");
+      } catch (e) {
+        expect(e).toEqual(new Error("empty laps"));
+        done();
+      }
+    });
+  });
 });

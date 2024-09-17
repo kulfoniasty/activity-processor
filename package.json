@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "format": "prettier . --write",
+    "coverage": "nyc --reporter=html npm run test"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,9 @@
   },
   "homepage": "https://github.com/kulfoniasty/activity-processor#readme",
   "devDependencies": {
-    "jasmine": "^5.3.0"
-  }
+    "jasmine": "^5.3.0",
+    "nyc": "^17.0.0",
+    "prettier": "3.3.3"
+  },
+  "type": "module"
 }

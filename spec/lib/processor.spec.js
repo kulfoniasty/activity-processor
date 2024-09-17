@@ -178,6 +178,24 @@ describe("GIVEN processor", () => {
           ),
         );
       });
+
+      it("THEN heart data for each lap is present", () => {
+        const heartRateSamples = samples.reduce((accumulator, value, index) => {
+          const lapNumber = index / 2;
+          if (value["sample-type"] == "2") {
+            accumulator[lapNumber] = value;
+          }
+          return accumulator;
+        }, {});
+
+        expect(processingResult.lapsData).toEqual(
+          laps.map((lap) =>
+            jasmine.objectContaining({
+              heartRateSamples,
+            }),
+          ),
+        );
+      });
     });
   });
 });

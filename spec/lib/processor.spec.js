@@ -82,5 +82,15 @@ describe("GIVEN processor", () => {
         done();
       }
     });
+
+    it("WHEN invoked without laps at all THEN error is thrown", (done) => {
+      try {
+        processor.loadLaps();
+        done.fail("validation error expected");
+      } catch (e) {
+        expect(e).toEqual(new Error("missing laps"));
+        done();
+      }
+    });
   });
 });

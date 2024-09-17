@@ -56,6 +56,17 @@ describe("GIVEN processor", () => {
       }
     });
 
+    it("WHEN invoked with samples array with odd length not appropriate for Indoor Cycling THEN error is thrown", (done) => {
+      try {
+        const oddSamples = [...samples].slice(1);
+        processor.loadSamples(oddSamples);
+        done.fail("validation error expected");
+      } catch (e) {
+        expect(e).toEqual(new Error("expected even number of samples"));
+        done();
+      }
+    });
+
     it("WHEN invoked with proper samples it succeeds", () => {
       processor.loadSamples([...samples]);
     });

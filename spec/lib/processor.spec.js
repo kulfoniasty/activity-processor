@@ -162,6 +162,7 @@ describe("GIVEN processor", () => {
             type: summary.activityType,
             device: summary.deviceName,
             duration: summary.durationInSeconds,
+            maxHeartRate: summary.maxHeartRateInBeatsPerMinute,
           }),
         );
       });

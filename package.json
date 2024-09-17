@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine",
     "format": "prettier . --write",
-    "coverage": "nyc --reporter=html npm run test"
+    "test": "nyc --reporter=html npm run jasmine",
+    "jasmine": "jasmine  --config=spec/support/jasmine.json"
   },
   "repository": {
     "type": "git",

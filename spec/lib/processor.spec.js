@@ -98,4 +98,21 @@ describe("GIVEN processor", () => {
       processor.loadLaps([...laps]);
     });
   });
+
+  describe("AND process method", () => {
+    it("WHEN invoked without initializing summary THEN error is thrown", (done) => {
+      try {
+        processor
+          .loadSamples([...samples])
+          .loadLaps([...laps])
+          .process();
+        done.fail("validation error expected");
+      } catch (e) {
+        expect(e).toEqual(
+          new Error("provide all three: samples, laps and summary"),
+        );
+        done();
+      }
+    });
+  });
 });

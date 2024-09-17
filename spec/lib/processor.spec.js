@@ -1,6 +1,7 @@
 const activityProcessor = require("../../lib/processor.js");
 const { summary } = require("./summary.fixtures.js");
 const { samples } = require("./sample.fixtures.js");
+const { laps } = require("./lap.fixtures.js");
 
 describe("GIVEN processor", () => {
   let processor;
@@ -91,6 +92,10 @@ describe("GIVEN processor", () => {
         expect(e).toEqual(new Error("empty laps"));
         done();
       }
+    });
+
+    it("WHEN invoked with proper laps it succeeds", () => {
+      processor.loadLaps([...laps]);
     });
   });
 });

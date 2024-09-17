@@ -145,12 +145,23 @@ describe("GIVEN processor", () => {
       }
     });
 
-    it("WHEN invoked with all inputs set THEN no error is thrown", () => {
-      processor
-        .loadSamples([...samples])
-        .loadLaps([...laps])
-        .loadSummary({ ...summary })
-        .process();
+    describe("WHEN invoked with all inputs set", () => {
+      let processingResult;
+      beforeEach(() => {
+        processingResult = processor
+          .loadSamples([...samples])
+          .loadLaps([...laps])
+          .loadSummary({ ...summary })
+          .process();
+      });
+
+      it("THEN activityOverview is present", () => {
+        expect(processingResult.activityOverview).toEqual(
+          jasmine.objectContaining({
+            userId: summary.userId,
+          }),
+        );
+      });
     });
   });
 });

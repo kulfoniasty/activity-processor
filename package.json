@@ -1,0 +1,22 @@
+{
+  "name": "activity-processor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kulfoniasty/activity-processor.git"
+  },
+  "author": "Grzegorz Musial (grzegorz@musial.tk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kulfoniasty/activity-processor/issues"
+  },
+  "homepage": "https://github.com/kulfoniasty/activity-processor#readme",
+  "devDependencies": {
+    "jasmine": "^5.3.0"
+  }
+}

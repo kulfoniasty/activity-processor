@@ -24,7 +24,7 @@ describe("GIVEN processor", () => {
         processor.loadSummary();
         done.fail("validation error expected");
       } catch (e) {
-        expect(e).toEqual(new Error("invalid summary"));
+        expect(e).toEqual(new Error("missing summary"));
         done();
       }
     });

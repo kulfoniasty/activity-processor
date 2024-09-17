@@ -55,5 +55,9 @@ describe("GIVEN processor", () => {
         done();
       }
     });
+
+    it("WHEN invoked with proper samples it succeeds", () => {
+      processor.loadSamples([...samples]);
+    });
   });
 });

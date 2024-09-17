@@ -161,7 +161,7 @@ describe("GIVEN processor", () => {
             userId: summary.userId,
             type: summary.activityType,
             device: summary.deviceName,
-            durationInSeconds: summary.durationInSeconds,
+            duration: summary.durationInSeconds,
           }),
         );
       });

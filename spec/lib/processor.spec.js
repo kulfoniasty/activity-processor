@@ -166,6 +166,16 @@ describe("GIVEN processor", () => {
           }),
         );
       });
+
+      it("THEN lap data for each lap is present", () => {
+        expect(processingResult.lapsData).toEqual(
+          laps.map((lap) =>
+            jasmine.objectContaining({
+              startTime: lap.startTimeInSeconds,
+            }),
+          ),
+        );
+      });
     });
   });
 });

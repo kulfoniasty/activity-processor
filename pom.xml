@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tk.musial.activityprocessor</groupId>
-    <artifactId>processor-parent</artifactId>
+    <artifactId>processor</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -129,10 +129,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <modules>
-        <module>core-processor</module>
-        <module>activity-api</module>
-        <module>activity-indoor-cycling</module>
-    </modules>
 </project>

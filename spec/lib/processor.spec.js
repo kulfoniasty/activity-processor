@@ -114,5 +114,13 @@ describe("GIVEN processor", () => {
         done();
       }
     });
+
+    it("WHEN invoked with all inputs set THEN no error is thrown", () => {
+      processor
+        .loadSamples([...samples])
+        .loadLaps([...laps])
+        .loadSummary({ ...summary })
+        .process();
+    });
   });
 });

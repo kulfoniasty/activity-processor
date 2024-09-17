@@ -172,6 +172,7 @@ describe("GIVEN processor", () => {
           laps.map((lap) =>
             jasmine.objectContaining({
               startTime: lap.startTimeInSeconds,
+              distance: lap.totalDistanceInMeters,
             }),
           ),
         );

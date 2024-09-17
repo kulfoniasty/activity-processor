@@ -193,8 +193,8 @@ describe("GIVEN processor", () => {
           laps.map((lap, index) =>
             jasmine.objectContaining({
               heartRateSamples: heartRateSamples[index]
-                .flatMap(({data}) => data.split(','))
-                .map((heartRate, sampleIndex) => ({sampleIndex, heartRate})),
+                .flatMap(({ data }) => data.split(","))
+                .map((heartRate, sampleIndex) => ({ sampleIndex, heartRate })),
             }),
           ),
         );

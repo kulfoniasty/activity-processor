@@ -27,3 +27,7 @@ In order to be able to use `nyc` code coverage easily without too much effort in
 esmodule to normal CommonJS module.
 
 Coverage report is accessible after `npm test` run under `build/coverage/index.html`
+
+## Code formatting
+
+For consistency across the codebase `prettier` formatter is added to the project and can be executed through `npm run format`.

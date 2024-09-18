@@ -1,6 +1,6 @@
 {
   "all": true,
-  "include": ["lib/**/*.js", "index.js"],
+  "include": ["lib/**/*.js"],
   "exclude": ["**/*.spec.js"],
   "report-dir": "build/coverage"
 }

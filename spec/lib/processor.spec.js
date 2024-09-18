@@ -195,7 +195,10 @@ describe("GIVEN processor", () => {
             jasmine.objectContaining({
               heartRateSamples: heartRateSamples[index]
                 .flatMap(({ data }) => data.split(","))
-                .map((heartRate, sampleIndex) => ({ sampleIndex, heartRate })),
+                .map((heartRate, sampleIndex) => ({
+                  sampleIndex,
+                  heartRate: heartRate !== 'null' ? parseInt(heartRate) : null,
+                })),
             }),
           ),
         );

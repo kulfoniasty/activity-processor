@@ -2,6 +2,7 @@ const activityProcessor = require("../../lib/processor.js");
 const { summary } = require("./summary.fixtures.js");
 const { samples } = require("./sample.fixtures.js");
 const { laps } = require("./lap.fixtures.js");
+const { processingResult: expectedResult } = require("./result.fixtures.js");
 
 describe("GIVEN processor", () => {
   let processor;
@@ -197,6 +198,12 @@ describe("GIVEN processor", () => {
                 .map((heartRate, sampleIndex) => ({ sampleIndex, heartRate })),
             }),
           ),
+        );
+      });
+
+      it("THEN it matches the manually created expected result", () => {
+        expect(processingResult).toEqual(
+          jasmine.objectContaining(expectedResult),
         );
       });
 
